@@ -19,7 +19,7 @@ CREATE TABLE Store.Suppliers (
 -- @block
 CREATE TABLE Store.ProductSuppliers (
 	idx int UNIQUE AUTO_INCREMENT,
-	FOREIGN KEY (product_id) REFERENCES Products(product_id),
+	FOREIGN KEY(product_id) REFERENCES Products(product_id),
 	FOREIGN KEY(supplier_id) REFERENCES Suppliers(supplier_id)
 );
 
