@@ -29,50 +29,7 @@ CREATE TABLE IF NOT EXISTS Store.Orders (
 	quantity int NOT NULL
 );
 
--- Adding to the database
--- @block
-INSERT INTO Store.Products (
-	code,
-	quantity,
-	price
-) VALUES 
-('abcd', 1, 21.65),
-('foo', 2, 25.65),
-('bar', 3, 28.65),
-('baz', 4, 13.65),
-('aaaa', 5, 3.65);
-
--- @block
-INSERT INTO Store.Suppliers (
-	supplier_name,
-	supplier_phone
-) VALUES 
-("McDonald'a", '0701232322'),
-("McDonald'b", '0701232323'),
-("McDonald'c", '0701232324');
-
--- @block
-INSERT INTO Store.ProductSuppliers (
-	product_id,
-	supplier_id
-) VALUES (1, 2);
-
--- Updating the database
--- @block
-UPDATE Store.Products
-SET code = 'FOO', quantity = 8
-WHERE product_id = 2;
-
--- Retain data from the database
--- @block
-SELECT * FROM Store.Products WHERE code = 'abcd';
-
-SELECT quantity FROM Store.Products WHERE code = 'abcd';
-
--- Delete data from the database
--- @block
-DELETE FROM Store.Products WHERE code = 'abcd';
-
 -- @block
 SELECT * FROM Store.Products;
-SELECT * FROM Store.ProductSuppliers
+SELECT * FROM Store.Suppliers;
+SELECT * FROM Store.ProductSuppliers;
