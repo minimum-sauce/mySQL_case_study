@@ -1,5 +1,5 @@
 -- @block
-CREATE DATABASE Store;
+CREATE DATABASE IF NOT EXISTS Store;
 
 -- Setting up the data base
 -- @block
@@ -18,9 +18,9 @@ CREATE TABLE IF NOT EXISTS Store.Suppliers (
 
 CREATE TABLE IF NOT EXISTS Store.ProductSuppliers (
 	supplier_id int,
-	FOREIGN KEY(supplier_id) REFERENCES Store.Suppliers(supplier_id),
+	FOREIGN KEY(supplier_id) REFERENCES Store.Suppliers(supplier_id) ON DELETE CASCADE,
 	product_id int,
-	FOREIGN KEY(product_id) REFERENCES Store.Products(product_id)
+	FOREIGN KEY(product_id) REFERENCES Store.Products(product_id) ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS Store.Orders (
